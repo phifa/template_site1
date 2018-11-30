@@ -1,0 +1,62 @@
+########################################################################################
+#
+#                                     TCEFORM
+#  Extra configuration for the form fields rendered by the TCEforms-class in general.
+#
+########################################################################################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:template/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+
+
+TCEFORM.pages {
+    layout {
+        addItems {
+            # Some Examples 
+            #11  = BG White
+            #12  = BG Black
+            #13  = BG Gray Light
+            #14  = BG Gray Medium
+            #15  = BG Gray Dark
+            #16  = BG 1st Color
+            #17  = BG 2nd Color
+        }
+    }
+}
+
+TCEFORM.tt_content {
+    layout {
+        addItems {
+            100 = List: Un-bulleted
+            101 = List: Accordion
+            300 = Downloads: Grid
+            400 = Menu: Sticky Menu
+            401 = Menu: Button Group
+        }
+    }
+    frame_class {
+        addItems {
+            warning = Callout Warning
+        }
+    }
+    space_before_class {
+        disabled = 0
+        addItems {
+            default = Default
+        }
+    }
+    space_after_class {
+        disabled = 0  
+        addItems {
+            default = Default
+        }
+    }
+    uploads_type {
+        addItems {
+        }
+    }
+    bullets_type {
+        addItems {
+        }
+    }
+}
+
+

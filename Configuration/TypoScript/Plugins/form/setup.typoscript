@@ -1,0 +1,22 @@
+plugin.tx_form {
+    view {
+        templateRootPaths.20 = EXT:{$config.extensiontitle}/Resources/Private/Templates/Form/
+        partialRootPaths.20 = EXT:{$config.extensiontitle}/Resources/Private/Partials/Form/
+        layoutRootPaths.20 = EXT:{$config.extensiontitle}/Resources/Private/Layouts/Form/
+    }
+
+    settings {
+        yamlConfigurations {
+            100 = EXT:{$config.extensiontitle}/Configuration/Yaml/Form/config.yaml
+        }
+    }
+}
+
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            100 = EXT:{$config.extensiontitle}/Configuration/Yaml/Form/config.yaml
+        }
+    }
+}
+

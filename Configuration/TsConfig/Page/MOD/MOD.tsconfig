@@ -1,0 +1,8 @@
+
+########################################################################################
+#
+#                                          mod
+#                            Options for the backend modules
+#
+########################################################################################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:template/Configuration/TsConfig/Page/MOD/MOD.tsconfig">

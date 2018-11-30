@@ -1,0 +1,37 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers"
+ data-namespace-typo3-fluid="true">
+
+<f:if condition="{gallery.rows}">
+	<div class="{f:if(condition: gallery.position.noWrap, then: 'small-12 large-3', else:'small-12')} cell">
+		<f:render section="blockGrid" arguments="{_all}" contentAs="InnerGrid">
+
+			<f:for each="{gallery.rows}" as="row">
+				<f:for each="{row.columns}" as="column">
+					<f:if condition="{column.media}">
+						<f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}"
+								/>
+					</f:if>
+				</f:for>
+			</f:for>
+
+		</f:render>
+	</div>
+</f:if>
+
+<f:section name="blockGrid">
+	<f:if condition="{gallery.count.columns} == 1">
+		<f:then>
+			<div class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-2 large-up-1 xlarge-up-1">
+				{InnerGrid -> f:format.raw()}
+			</div>
+		</f:then>
+		<f:else>
+			<div class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-<f:format.number decimals='0'>{gallery.count.columns/2}</f:format.number> large-up-<f:format.number decimals='0'>{gallery.count.columns/1.5}</f:format.number> xlarge-up-<f:format.number decimals='0'>{gallery.count.columns -> f:format.number()}</f:format.number>">
+				{InnerGrid -> f:format.raw()}
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+
+
+</html>

@@ -1,0 +1,38 @@
+################################
+#### BACKENDLAYOUT: DEFAULT ####
+################################
+mod {
+    web_layout {
+        BackendLayouts {
+            section_100 {
+                title = Section: 100
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Window 100%
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Section 100%
+                                        colPos = 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+                icon = EXT:template/Resources/Public/Backend/BackendlayoutIcons/section_100.svg
+            }
+        }
+    }
+}

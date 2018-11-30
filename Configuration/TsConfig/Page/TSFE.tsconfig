@@ -1,0 +1,9 @@
+########################################################################################
+#
+#                                        TSFE
+#                    Options for the TSFE frontend object.
+#
+########################################################################################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:template/Configuration/TsConfig/Page/TSFE.tsconfig">
+
+

@@ -1,0 +1,15 @@
+<f:if condition="{data.is_siteroot}">
+    <f:else>
+        <ul class="breadcrumbs">
+            <li>
+                <f:link.page pageUid="{varRootUid}"><f:translate key="LLL:EXT:template/Resources/Private/Language/locallang.xlf:home" /></f:link.page>
+            </li>
+            <f:for each="{menuBreadcrumbsTest}" as="menuItem">
+                <li><a href="{menuItem.link}">{menuItem.title}</a></li>
+            </f:for>
+        </ul>
+    </f:else>
+</f:if>
+
+
+

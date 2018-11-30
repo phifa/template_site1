@@ -1,0 +1,20 @@
+################################
+#### BACKENDLAYOUT: DEFAULT ####
+################################
+mod {
+    web_layout {
+        BackendLayouts {
+            extra_singlepage {
+                title = Extra: Singlepage
+                config {
+                    backend_layout {
+                        colCount = 0
+                        rowCount = 0
+                    }
+
+                }
+                icon = EXT:template/Resources/Public/Backend/BackendlayoutIcons/extra_single.svg
+            }
+        }
+    }
+}

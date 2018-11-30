@@ -1,0 +1,12 @@
+########################################################################################
+#
+#                                     tx_extensions
+#                     This is reserved space for extensions.
+#
+########################################################################################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:template/Configuration/TsConfig/Page/TX_.tsconfig">
+
+
+tx_news.templateLayouts {
+    listmediaobjects = List Media Objects
+}

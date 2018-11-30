@@ -1,0 +1,8 @@
+{
+  "name": "phifa/template_site1",
+  "type": "typo3-cms-extension",
+  "description": "TYPO3 Child Template. Use with template extension.",
+  "require": {
+    "typo3/minimal": ">=9.5"
+  }
+}

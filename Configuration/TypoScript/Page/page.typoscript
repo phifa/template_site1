@@ -1,0 +1,172 @@
+# Uncomment for template-specific assets
+
+
+
+/*
+page {
+    config {
+        # Page specific configuration overwrites template/config.typoscript
+        index_enable = 1
+        #disableBodyTag = 1
+    }
+    meta {
+        # Microsoft
+        msapplication-TileColor = {$config.color}
+        msapplication-TileImage = {$path.page.favicons}mstile-150x150.png
+        msapplication-config = {$path.page.favicons}browserconfig.xml
+        theme-color = {$config.color}
+    }
+    includeCSS {
+        app = {$path.page.css}
+        app.async = 1
+    }
+    includeJSFooterlibs {
+        app = {$path.page.js}
+        app.async = 1
+    }
+
+    # FLUID Template (registered in EXT:template)
+    10 {
+        templateRootPaths {
+            10 = {$path.default.templates}
+            20 = {$path.page.templates}
+            30 = {$path.test.templates}
+        }
+
+        partialRootPaths {
+            10 = {$path.default.partials}
+            20 = {$path.page.partials}
+            30 = {$path.test.partials}
+        }
+
+        layoutRootPaths {
+            10 = {$path.default.layouts}
+            20 = {$path.page.layouts}
+            30 = {$path.test.layouts}
+        }
+
+        templateName.stdWrap.cObject {
+            pagets__page_100                = TEXT
+            pagets__page_100.value          = Page_100
+            pagets__page_50-50              = TEXT
+            pagets__page_50-50.value        = Page_50-50
+            pagets__page_66-33              = TEXT
+            pagets__page_66-33.value        = Page_66-33
+            pagets__page_33-66              = TEXT
+            pagets__page_33-66.value        = Page_33-66
+            pagets__page_33-33-33           = TEXT
+            pagets__page_33-33-33.value     = Page_33-33-33
+
+            pagets__section_100             = TEXT
+            pagets__section_100.value       = Section_100
+            pagets__section_50-50           = TEXT
+            pagets__section_50-50.value     = Section_50-50
+            pagets__section_66-33           = TEXT
+            pagets__section_66-33.value     = Section_66-33
+            pagets__section_33-66           = TEXT
+            pagets__section_33-66.value     = Section_33-66
+            pagets__section_33-33-33        = TEXT
+            pagets__section_33-33-33.value  = Section_33-33-33
+
+            pagets__extra_start             = TEXT
+            pagets__extra_start.value       = Extra_start
+            pagets__extra_singlepage        = TEXT
+            pagets__extra_singlepage.value  = Extra_singlepage
+            pagets__extra_fullwidth         = TEXT
+            pagets__extra_fullwidth.value   = Extra_fullwidth
+            pagets__extra_nolayout          = TEXT
+            pagets__extra_nolayout.value    = Nolayout
+        }
+
+
+        variables {
+            # Helper Variables
+            varRootUid = TEXT
+            varRootUid.data = leveluid : 0
+            # Helper Paths
+            pathDist = TEXT
+            pathDist.value = {$path.page.dist}
+            # Company Information
+            configName = TEXT
+            configName.value = {$config.name}
+            # Google GTM Code
+            googleTagmanager = TEXT
+            googleTagmanager.value = {$google.tagManager}
+            # Google Analytics (needed for Optout)
+            universalAnalytics = TEXT
+            universalAnalytics.value = {$google.universalAnalytics}
+        }
+
+        dataProcessing {
+            # Resource
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references {
+                    table = pages
+                    fieldName = media
+                }
+                as = resources
+            }
+            # Menu Footer
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                special = directory
+                special.value = 6
+                expandAll = 1
+                as = menuFooter
+            }
+            # Menu Breadcrumbs
+            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            30 {
+                special = rootline
+                special.range = 1|-1
+                includeNotInMenu = 1
+                as = menuBreadcrumbs
+            }
+            40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            40 {
+                languages = auto
+                as = menuLanguage
+            }
+        }
+    }
+
+    headerData {
+
+
+        # Icons
+        20 = TEXT
+        20 {
+            value (
+                <link rel="apple-touch-icon" sizes="180x180" href="{$path.page.favicons}apple-touch-icon.png">
+                <link rel="icon" type="image/png" href="{$path.page.favicons}favicon-32x32.png" sizes="32x32">
+                <link rel="icon" type="image/png" href="{$path.page.favicons}favicon-16x16.png" sizes="16x16">
+                <link rel="manifest" href="{$path.page.favicons}manifest.json">
+                <link rel="mask-icon" href="{$path.page.favicons}safari-pinned-tab.svg" color="{$config.color}">
+                <meta name="theme-color" content="{$config.color}">
+                <link rel="shortcut icon" href="{$path.page.favicons}favicon.ico">
+            )
+        }
+    }
+
+}
+
+
+
+[applicationContext = Development*]
+    page {
+        footerData {
+            100 = TEXT
+            100.value (
+                <div style='z-index:9999; position: fixed; bottom: 1rem; left: 2rem; opacity:0.9; text-transform: uppercase'>
+                    <div class='hide-for-medium primary small button'> small +</div>
+                    <div class='show-for-medium-only secondary small button'> medium +</div>
+                    <div class='show-for-large success small button'> large +</div>
+                </div>
+            )
+        }
+    }
+[global]
+
+
+*/

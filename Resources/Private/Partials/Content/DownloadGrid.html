@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:if condition="{files}">
+
+    <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-4 xlarge-up-4">
+        <f:for each="{files}" as="file" iteration="fileIterator">
+            <div class="cell">
+                <f:switch expression="{data.uploads_type}">
+                    <f:case value="1">
+                        <f:render section="uploads_type-1" arguments="{_all}" />
+                    </f:case>
+                    <f:case value="2">
+                        <f:render section="uploads_type-2" arguments="{_all}" />
+                    </f:case>
+                    <f:defaultCase>
+                        <f:render section="uploads_type-3" arguments="{_all}" />
+                    </f:defaultCase>
+                </f:switch>
+            </div>
+        </f:for>
+    </div>
+
+</f:if>
+
+<f:section name="uploads_type-1">
+
+    <div class="filelist filelist--icon">
+        <div class="filelist--icon__section filelist--icon__section--secondary">
+            <img src="{f:uri.resource(path: 'Filetypeicons/{file.extension}.png', extensionName: 'template')}" alt="">&nbsp;
+        </div>
+        <div class="filelist--icon__section filelist--icon__section--main">
+            <a href="{file.publicUrl}" class="" target="_blank">
+                <div class="filelist__filename">
+                    <f:if condition="{file.properties.title}">
+                        <f:then>
+                            {file.properties.title}
+                        </f:then>
+                        <f:else>
+                            {file.name}
+                        </f:else>
+                    </f:if>
+                    <f:if condition="{data.filelink_size}">
+                        <span>
+                            [
+                            <f:format.bytes value="{file.properties.size}" />]
+                        </span>
+                    </f:if>
+                </div>
+            </a>
+            <f:if condition="{file.properties.description}">
+                <f:if condition="{data.uploads_description}">
+                    <div class="filelist__description">
+                        {file.properties.description}
+                    </div>
+                </f:if>
+            </f:if>
+        </div>
+    </div>
+
+</f:section>
+
+<f:section name="uploads_type-2">
+    <f:if condition="{f:uri.image(src: 'file:{f:if(condition: file.originalFile, then: \'file:{file.originalFile.uid}\', else: \'file:{file.uid}\')}')} != '/'">
+        <f:then>
+            <a href="{file.publicUrl}" class="filelist--thumb__thumbnail no-SmoothState" target="_blank">
+                <f:media file="{file}" alt="{file.properties.alternative}" />
+            </a>
+        </f:then>
+        <f:else>
+            <img src="{f:uri.resource(path: 'Icons/FileIcons/{file.extension}.gif', extensionName: 'frontend')}" alt="" />
+        </f:else>
+    </f:if>
+    <div class="filelist--thumb__meta">
+        <a href="{file.publicUrl}" class="no-SmoothState" target="_blank">
+            <div class="filelist__filename">
+                <f:if condition="{file.properties.title}">
+                    <f:then>
+                        {file.properties.title}
+                    </f:then>
+                    <f:else>
+                        {file.name}
+                    </f:else>
+                </f:if>
+                <f:if condition="{data.filelink_size}">
+                    <span class="ce-uploads-filesize">
+                        [
+                        <f:format.bytes value="{file.properties.size}" />]
+                    </span>
+                </f:if>
+            </div>
+        </a>
+        <f:if condition="{file.properties.description}">
+            <f:if condition="{data.uploads_description}">
+                <div class="filelist__description">
+                    {file.properties.description}
+                </div>
+            </f:if>
+        </f:if>
+    </div>
+
+</f:section>
+
+<f:section name="uploads_type-3">
+    <div>
+        <a href="{file.publicUrl}" class="no-SmoothState" target="_blank">
+            <div class="filelist__filename">
+                <f:if condition="{file.properties.title}">
+                    <f:then>
+                        {file.properties.title}
+                    </f:then>
+                    <f:else>
+                        {file.name}
+                    </f:else>
+                </f:if>
+                <f:if condition="{data.filelink_size}">
+                    <span class="ce-uploads-filesize">
+                        [
+                        <f:format.bytes value="{file.properties.size}" />]
+                    </span>
+                </f:if>
+            </div>
+        </a>
+        <f:if condition="{file.properties.description}">
+            <f:if condition="{data.uploads_description}">
+                <div class="filelist__description">
+                    {file.properties.description}
+                </div>
+            </f:if>
+        </f:if>
+    </div>
+</f:section>
+
+</html>

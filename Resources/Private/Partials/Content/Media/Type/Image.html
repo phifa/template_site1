@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers"
+ data-namespace-typo3-fluid="true">
+
+<div class="cell flex-container">
+	<f:if condition="{file.link}">
+		<f:then>
+			<f:link.typolink parameter="{file.link}" title="{file.title}" class="{f:if(condition: data.imageborder, then: 'card')}">
+				<f:render partial="Media/Rendering/Image" arguments="{_all}" />
+				<f:render section="imageDescription" arguments="{_all}" />
+			</f:link.typolink>
+		</f:then>
+		<f:else>
+			<f:if condition="{data.image_zoom}">
+				<f:then>
+					<a href="{f:uri.image(src:file.uid, treatIdAsReference:1)}" data-fancybox="gallery-{data.uid}" class="{f:if(condition: data.imageborder, then: 'card')} no-smoothState no-Prefetch">
+						<f:render partial="Media/Rendering/Image" arguments="{_all}" />
+						<f:render section="imageDescription" arguments="{_all}" />
+					</a>
+				</f:then>
+				<f:else>
+					<div {f:if(condition: data.imageborder, then: 'class="card"')}>
+						<f:render partial="Media/Rendering/Image" arguments="{_all}" />
+						<f:render section="imageDescription" arguments="{_all}" />
+					</div>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</div>
+
+<f:section name="imageDescription">
+	<f:if condition="{file.description}">
+		<div {f:if(condition: data.imageborder, then: 'class="card-section"')}>
+			{file.description}
+		</div>
+	</f:if>
+</f:section>
+
+
+</html>

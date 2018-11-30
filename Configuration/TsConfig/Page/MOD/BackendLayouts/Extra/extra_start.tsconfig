@@ -1,0 +1,30 @@
+################################
+#### BACKENDLAYOUT: DEFAULT ####
+################################
+mod {
+    web_layout {
+        BackendLayouts {
+            extra_start {
+                title = Extra: Start
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Start
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+                icon = EXT:template/Resources/Public/Backend/BackendlayoutIcons/extra_start.svg
+            }
+        }
+    }
+}

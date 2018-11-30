@@ -1,0 +1,58 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers"
+ data-namespace-typo3-fluid="true">
+<f:if condition="{bullets}">
+	<f:switch expression="{data.layout}">
+		<f:case value="101">
+			<div class="accordion" data-accordion data-allow-all-closed="true" data-multi-expand="true">
+				<f:for each="{bullets}" as="definitionListItem">
+					<div class="accordion-item" data-accordion-item>
+						<f:for each="{definitionListItem}" as="termDescription" iteration="termDescriptionIterator">
+							<f:switch expression="{termDescriptionIterator.index}">
+								<f:case value="0">
+									<a href="#" class="accordion-title lexikon__searchtext" data-timestamp="{termDescription}">{termDescription}</a>
+								</f:case>
+								<f:defaultCase>
+									<div class="accordion-content" data-tab-content>{termDescription -> f:format.raw()}</div>
+								</f:defaultCase>
+							</f:switch>
+						</f:for>
+					</div>
+				</f:for>
+			</div>
+		</f:case>
+		<f:case value="102">
+			<ul class="list list__icons">
+				<f:for each="{bullets}" as="definitionListItem">
+					<f:for each="{definitionListItem}" as="termDescription" iteration="termDescriptionIterator">
+						<f:switch expression="{termDescriptionIterator.index}">
+							<f:case value="0">
+								<li class="icon-{termDescription}">
+							</f:case>
+							<f:defaultCase>
+								{termDescription}</li>
+							</f:defaultCase>
+						</f:switch>
+					</f:for>
+				</f:for>
+			</ul>
+		</f:case>
+		<f:defaultCase>
+			<dl class="{f:if(condition:'{data.layout} == 10',then:'no-bullet', else:'')}">
+				<f:for each="{bullets}" as="definitionListItem">
+					<f:for each="{definitionListItem}" as="termDescription" iteration="termDescriptionIterator">
+						<f:if condition="{termDescriptionIterator.isFirst}">
+							<f:then>
+								<dt>{termDescription}</dt>
+							</f:then>
+							<f:else>
+								<dd>{termDescription}</dd>
+							</f:else>
+						</f:if>
+					</f:for>
+				</f:for>
+			</dl>
+		</f:defaultCase>
+	</f:switch>
+</f:if>
+
+</html>

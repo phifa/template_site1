@@ -1,0 +1,20 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedFileMounts:
+          10: 1:/template/form_definitions/
+          50: 1:/template/test/
+      prototypes:
+        standard:
+          ########### DEFAULT FORM ELEMENT DEFINITIONS ###########
+          formElementsDefinition:
+            ### BASE ELEMENTS ###
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: "EXT:template_site1/Resources/Private/Templates/Form/"
+                partialRootPaths:
+                  20: "EXT:template_site1/Resources/Private/Partials/Form/"
+                layoutRootPaths:
+                  20: "EXT:template_site1/Resources/Private/Layouts/Form/"
