@@ -1,0 +1,52 @@
+mod {
+    web_layout {
+        BackendLayouts {
+            section_33-66 {
+                title = Section: 33-66
+                config {
+                    backend_layout {
+                        colCount = 3
+                        rowCount = 3
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Window 100%
+                                        colspan = 3
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Section 100%
+                                        colspan = 3
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                            3 {
+                                columns {
+                                    1 {
+                                        name = Section 33%
+                                        colPos = 1
+                                    }
+                                    2 {
+                                        name = Section 66%
+                                        colspan = 2
+                                        colPos = 2
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+
+                }
+                icon = EXT:template/Resources/Public/Backend/BackendlayoutIcons/section_33-66.svg
+            }
+        }
+    }
+}

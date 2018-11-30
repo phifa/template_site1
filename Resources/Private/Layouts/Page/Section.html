@@ -1,0 +1,22 @@
+<f:if condition="{resources}">
+    <f:for each="{resources}" as="resource">
+        <f:variable name="resourceSource">
+            background-image: url({f:uri.image(image: resource.originalFile, treatIdAsReference: '1')});
+        </f:variable>
+        <f:if condition="{resource.description}">
+            <f:variable name="resourceDescription">
+                background-position: {resource.description};
+            </f:variable>
+        </f:if>
+    </f:for>
+</f:if>
+
+<f:variable name="style">
+    <f:if condition="{resourceSource} || {resourceDescription}">
+        {resourceSource->f:spaceless()} {resourceDescription->f:spaceless()}
+    </f:if>
+</f:variable>
+
+<section id="section-{data.uid}" class="section section-{data.uid} {data.layout}" data-magellan-target="section-{data.uid}" style="{style->f:spaceless()}">
+    <f:render section="Main" />
+</section>

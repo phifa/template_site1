@@ -1,0 +1,7 @@
+########################################################################################
+#
+#                                       TCEMAIN
+#                  Configuration for the TYPO3 Core Engine (TCEmain).
+#
+########################################################################################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:template/Configuration/TsConfig/Page/TCEMAIN.tsconfig">

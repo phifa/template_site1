@@ -1,0 +1,19 @@
+################################
+#### BACKENDLAYOUT: DEFAULT ####
+################################
+mod {
+    web_layout {
+        BackendLayouts {
+            extra_nolayout {
+                title = Extra: No Layout
+                config {
+                    backend_layout {
+                        colCount = 0
+                        rowCount = 0
+                    }
+                }
+                icon = EXT:template/Resources/Public/Backend/BackendlayoutIcons/extra_nolayout.svg
+            }
+        }
+    }
+}

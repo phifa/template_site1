@@ -1,0 +1,35 @@
+
+######################
+#### DEPENDENCIES ####
+######################
+
+# Default Extensions
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:indexed_search/Configuration/TypoScript/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:form/Configuration/TypoScript/setup.typoscript">
+
+# Main Template
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:template/Configuration/TypoScript/Setup/setup.typoscript">
+
+
+###################
+#### LIBRARIES ####
+###################
+
+<INCLUDE_TYPOSCRIPT: source="DIR: ../Library" extensions="typoscript">
+
+
+#########################
+#### PAGE AND CONFIG ####
+#########################
+
+<INCLUDE_TYPOSCRIPT: source="FILE:../Page/page.typoscript">
+
+
+#############################
+#### EXTENSION OVERRIDES ####
+#############################
+
+<INCLUDE_TYPOSCRIPT: source="FILE:../Plugins/indexed_search/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:../Plugins/form/setup.typoscript">
+

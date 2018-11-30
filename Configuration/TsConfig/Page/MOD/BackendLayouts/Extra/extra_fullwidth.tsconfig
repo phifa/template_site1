@@ -1,0 +1,30 @@
+################################
+#### BACKENDLAYOUT: DEFAULT ####
+################################
+mod {
+    web_layout {
+        BackendLayouts {
+            extra_fullwidth {
+                title = Extra: Fullwidth
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 1
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Fullwidth
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+                icon = EXT:template/Resources/Public/Backend/BackendlayoutIcons/extra_fullwidth.svg
+            }
+        }
+    }
+}

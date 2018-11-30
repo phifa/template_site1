@@ -1,0 +1,62 @@
+#customsubcategory=110=Meta Data
+
+
+
+######################
+#### DEPENDENCIES ####
+######################
+
+# Default Extensions
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:indexed_search/Configuration/TypoScript/constants.typoscript">
+
+# Main Template
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:template/Configuration/TypoScript/Setup/constants.typoscript">
+
+config {
+    extensiontitle = template_site1
+    name = Company Name
+    domain = template
+    domainending = com
+    color = #ffffff
+    headerComment   = made with ♥
+}
+
+path {
+    base            = typo3conf/ext/{$config.extensiontitle}/
+    page {
+        layouts     = {$path.base}Resources/Private/Layouts/Page/
+        partials    = {$path.base}Resources/Private/Partials/Page/
+        templates   = {$path.base}Resources/Private/Templates/Page/
+        dist        = {$path.base}Resources/Public/Page/dist/
+        css         = {$path.base}Resources/Public/Page/dist/assets/css/app.css
+        img         = {$path.base}Resources/Public/Page/dist/assets/img/
+        js          = {$path.base}Resources/Public/Page/dist/assets/js/app.js
+        favicons    = {$path.base}Resources/Public/Page/dist/assets/favicons/
+    }
+}
+
+meta {
+    # cat=Site Template /110/010; type=string; label=Description: Enter a short description of the page. It will be displayed in the result lists of most search engines.
+    description =
+    # cat=Site Template /110/020; type=string; label=Author: Enter the page author's name.
+    author = {$config.name}
+}
+
+/*
+google {
+    tagManager =
+    universalAnalytics =
+    googleplusurl =
+}
+*/
+
+
+
+####################
+#### Overrides #####
+####################
+
+<INCLUDE_TYPOSCRIPT: source="FILE:../Plugins/fluid_styled_content/Static/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:../Plugins/indexed_search/constants.typoscript">
+

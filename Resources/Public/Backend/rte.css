@@ -1,0 +1,27 @@
+@import "../Page/dist/assets/css/app.css";
+
+strong {font-weight: bold}
+
+a.button {
+}
+
+p.text-left {
+}
+
+p.text-center {
+}
+
+p.text-right {
+}
+
+p.text-justify {
+}
+
+p.lead {
+}
+
+ul.no-bullet {
+}
+
+ol.no-bullet {
+}
