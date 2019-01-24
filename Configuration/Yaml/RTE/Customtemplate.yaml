@@ -1,10 +1,8 @@
 # Load default processing options
 imports:
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
-    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
-
-
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
 
 # Add configuration for the editor
 # For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
@@ -12,13 +10,38 @@ editor:
   config:
     stylesSet:
       # block level styles
-      - { name: "Callout", element: "p", attributes: { class: "callout primary" } }
-      - { name: "Analytics Deactivate", element: "span", attributes: { class: "ga_deactivate" } }
+      - {
+          name: "Callout",
+          element: "p",
+          attributes: { class: "callout primary" },
+        }
+      - {
+          name: "Analytics Deactivate",
+          element: "span",
+          attributes: { class: "ga_deactivate" },
+        }
       # Inline styles
-      - { name: "Button Primary", element: "a", attributes: { class: "button primary" } }
-      - { name: "Button Secondary", element: "a", attributes: { class: "button secondary" } }
+      - {
+          name: "Button Primary",
+          element: "a",
+          attributes: { class: "button primary" },
+        }
+      - {
+          name: "Button Expanded",
+          element: "a",
+          attributes: { class: "button expanded" },
+        }
+      - {
+          name: "Button Secondary",
+          element: "a",
+          attributes: { class: "button secondary" },
+        }
       - { name: "Fancybox", element: "a", attributes: { data-fancybox: "1" } }
-    contentsCss: ["EXT:template/Resources/Public/Test/dist/assets/css/app.css", "EXT:template/Resources/Public/Backend/RTE/rte.css"]
+    contentsCss:
+      [
+        "EXT:template/Resources/Public/Test/dist/assets/css/app.css",
+        "EXT:template_site1/Resources/Public/Backend/RTE/rte.css",
+      ]
 
     format_tags: "p;h1;h2;h3;h4;h5;h6;pre"
 
@@ -32,11 +55,11 @@ editor:
       - { name: tools }
       - { name: table }
       - { name: tabletools }
-      - { name: document,  groups: [ mode, document, doctools ] }
+      - { name: document, groups: [mode, document, doctools] }
       - { name: others }
       - "/"
-      - { name: basicstyles, groups: [ basicstyles, align ] }
-      - { name: paragraph,   groups: [ list, indent, blocks, align, bidi ] }
+      - { name: basicstyles, groups: [basicstyles, align] }
+      - { name: paragraph, groups: [list, indent, blocks, align, bidi] }
       - { name: links }
       - "/"
       - { name: styles }
@@ -57,6 +80,3 @@ editor:
       - Anchor
       - Underline
       - Strike
-
-
-

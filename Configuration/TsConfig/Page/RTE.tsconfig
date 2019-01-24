@@ -17,8 +17,4 @@ RTE.default {
     #preset = minimal
     #preset = full
     preset = customtemplate
-
-    // Use delivered rte css file that includes a default framework css file.
-    // This css file is only for backend purposes and not used in frontend anyways!
-    contentCSS = EXT:template_site1/Resources/Public/Backend/rte.css
 }

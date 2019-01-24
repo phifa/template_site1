@@ -1,6 +1,8 @@
-@import "../Page/dist/assets/css/app.css";
+@import "../../Page/dist/assets/css/app.css";
 
-strong {font-weight: bold}
+strong {
+  font-weight: bold;
+}
 
 a.button {
 }
