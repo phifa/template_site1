@@ -8,6 +8,9 @@ page {
         # Page specific configuration overwrites template/config.typoscript
         index_enable = 1
         #disableBodyTag = 1
+        pageTitleFirst = 1
+        pageTitleSeparator = -
+        pageTitleSeparator.noTrimWrap = | | |
     }
     meta {
         # Microsoft
@@ -153,7 +156,17 @@ page {
 
 
 
-[applicationContext = Development*]
+# Localization:
+page.config {
+    htmlTag_setParams = lang="de" dir="ltr" class="no-js"
+}
+[siteLanguage("title") == "English"]
+    page.config {
+        htmlTag_setParams = lang="en" dir="ltr" class="no-js"
+    }
+[END]
+
+[applicationContext == "Development/Local" || applicationContext == "Development/Testing" ]
     page {
         footerData {
             100 = TEXT
@@ -166,7 +179,7 @@ page {
             )
         }
     }
-[global]
+[END]
 
 
 */
